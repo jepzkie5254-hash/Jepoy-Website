@@ -1,0 +1,123 @@
+/* ===== Dota-inspired theme ===== */
+:root {
+  --bg: #0e0f13;
+  --panel: #1a1c23;
+  --panel-2: #23262f;
+  --red: #c23a2b;
+  --gold: #e3b341;
+  --text: #e8e8ec;
+  --muted: #9a9ca8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+body {
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 10;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.8rem 2rem;
+  background: rgba(14, 15, 19, 0.95);
+  border-bottom: 2px solid var(--red);
+}
+.logo { color: var(--gold); font-weight: 800; letter-spacing: 3px; text-decoration: none; font-size: 1.3rem; }
+.navbar ul { list-style: none; display: flex; gap: 1.2rem; flex-wrap: wrap; }
+.navbar a { color: var(--text); text-decoration: none; font-size: 0.95rem; transition: color 0.2s; }
+.navbar nav a:hover { color: var(--gold); }
+
+section { max-width: 1100px; margin: 0 auto; padding: 5rem 1.5rem 2rem; }
+
+/* Hero */
+.hero {
+  display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap;
+  min-height: 100vh; padding-top: 7rem;
+}
+.profile-pic {
+  width: 260px; height: 260px; object-fit: cover; border-radius: 50%;
+  border: 5px solid var(--gold); box-shadow: 0 0 30px rgba(194, 58, 43, 0.6);
+}
+.hero-text { flex: 1; min-width: 280px; }
+.greeting { color: var(--muted); }
+.hero h1 { font-size: 2.8rem; color: var(--gold); line-height: 1.2; }
+.hero h2 { color: var(--red); font-size: 1.6rem; margin-bottom: 0.8rem; }
+.tagline { font-style: italic; font-size: 1.15rem; margin-bottom: 1rem; border-left: 4px solid var(--red); padding-left: 0.8rem; }
+.intro { color: var(--muted); margin-bottom: 1.5rem; }
+.btn {
+  display: inline-block; padding: 0.7rem 1.6rem; background: var(--red); color: #fff;
+  text-decoration: none; border-radius: 4px; font-weight: 600; transition: background 0.2s, transform 0.2s;
+}
+.btn:hover { background: var(--gold); color: #111; transform: translateY(-2px); }
+
+/* Section headings */
+.section-title {
+  font-size: 2rem; color: var(--gold); margin-bottom: 1rem;
+  border-bottom: 2px solid var(--red); display: inline-block; padding-bottom: 0.2rem;
+}
+.section-sub { color: var(--muted); margin-bottom: 1.5rem; }
+.sub-title { color: var(--gold); margin: 2.5rem 0 0.4rem; font-size: 1.4rem; }
+.project-desc { color: var(--muted); margin-bottom: 1rem; }
+
+/* Cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; margin-top: 1rem; }
+.card {
+  background: var(--panel); border: 1px solid #2c2f3a; border-top: 3px solid var(--red);
+  border-radius: 6px; padding: 1.3rem; transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); }
+.card h3 { color: var(--gold); margin-bottom: 0.6rem; }
+.card ul, .card ol { padding-left: 1.2rem; }
+.card li { margin-bottom: 0.4rem; }
+.card code { display: block; background: #000; padding: 0.5rem; margin-top: 0.5rem; font-size: 0.8rem; color: #8fd18f; overflow-x: auto; }
+
+/* Dota abilities */
+.abilities { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+.ability {
+  position: relative; background: linear-gradient(160deg, var(--panel-2), var(--panel));
+  border: 2px solid #333744; border-radius: 8px; padding: 1.3rem 1.3rem 1.3rem 5.2rem;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+.ability:hover { border-color: var(--gold); box-shadow: 0 0 20px rgba(227, 179, 65, 0.35); transform: translateY(-4px); }
+.ability .icon {
+  position: absolute; left: 1rem; top: 1.2rem; width: 3.4rem; height: 3.4rem;
+  display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(circle, var(--red), #5c1810); border: 2px solid var(--gold);
+  border-radius: 8px; font-size: 1.6rem; font-weight: 800; color: #fff;
+}
+.ability h3 { color: var(--gold); }
+.ability small { color: var(--red); font-size: 0.75rem; }
+.tag { display: inline-block; background: #000; color: var(--muted); font-size: 0.75rem; padding: 0.1rem 0.6rem; border-radius: 10px; margin: 0.3rem 0 0.6rem; }
+.ability p { color: var(--muted); font-size: 0.92rem; }
+.level { margin-top: 0.7rem; font-size: 0.85rem; color: var(--muted); }
+.pips i { display: inline-block; width: 22px; height: 8px; margin-left: 4px; background: #333; border-radius: 2px; }
+.pips i.on { background: var(--gold); box-shadow: 0 0 6px var(--gold); }
+.ultimate { border-color: var(--red); }
+.ultimate .icon { background: radial-gradient(circle, #ffb300, var(--red)); }
+
+/* Tables */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; background: var(--panel); }
+caption { caption-side: top; text-align: left; padding: 0.5rem 0; color: var(--gold); font-weight: 700; }
+th, td { border: 1px solid #2c2f3a; padding: 0.7rem; text-align: left; }
+th { background: var(--red); color: #fff; }
+tbody tr:nth-child(even) { background: var(--panel-2); }
+tbody tr:hover { background: #2d3140; }
+td.break { text-align: center; color: var(--gold); font-style: italic; }
+
+/* Footer */
+footer { text-align: center; padding: 2rem 1rem; margin-top: 3rem; border-top: 2px solid var(--red); color: var(--muted); }
+
+/* Responsive */
+@media (max-width: 700px) {
+  .navbar { flex-direction: column; gap: 0.4rem; padding: 0.6rem 1rem; }
+  .navbar ul { justify-content: center; gap: 0.7rem; }
+  .hero { padding-top: 9rem; text-align: center; justify-content: center; }
+  .hero h1 { font-size: 2.1rem; }
+  .tagline { text-align: left; }
+}

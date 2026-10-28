@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My First Calculator</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: lightblue;
+      text-align: center;
+    }
+    h1 {
+      color: darkblue;
+    }
+    input {
+      width: 100px;
+      height: 30px;
+      font-size: 18px;
+      margin: 5px;
+    }
+    button {
+      width: 50px;
+      height: 40px;
+      font-size: 20px;
+      margin: 5px;
+      background-color: yellow;
+      border: 2px solid black;
+    }
+    button:hover {
+      background-color: orange;
+    }
+    #result {
+      font-size: 28px;
+      color: red;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My First Calculator</h1>
+  <p>Type two numbers then click an operator!</p>
+
+  <input type="number" id="num1" placeholder="Number 1">
+  <input type="number" id="num2" placeholder="Number 2">
+
+  <br><br>
+
+  <button onclick="add()">+</button>
+  <button onclick="subtract()">-</button>
+  <button onclick="multiply()">x</button>
+  <button onclick="divide()">/</button>
+  <button onclick="clearAll()">C</button>
+
+  <p id="result">Answer: </p>
+
+  <br>
+  <a href="../index.html#projects">Go back to my website</a>
+
+  <script>
+    // get the numbers from the boxes
+    function getNum1() {
+      return Number(document.getElementById("num1").value);
+    }
+    function getNum2() {
+      return Number(document.getElementById("num2").value);
+    }
+
+    function add() {
+      var answer = getNum1() + getNum2();
+      document.getElementById("result").innerHTML = "Answer: " + answer;
+    }
+
+    function subtract() {
+      var answer = getNum1() - getNum2();
+      document.getElementById("result").innerHTML = "Answer: " + answer;
+    }
+
+    function multiply() {
+      var answer = getNum1() * getNum2();
+      document.getElementById("result").innerHTML = "Answer: " + answer;
+    }
+
+    function divide() {
+      // cant divide by zero!!
+      if (getNum2() == 0) {
+        document.getElementById("result").innerHTML = "Answer: cant divide by 0";
+      } else {
+        var answer = getNum1() / getNum2();
+        document.getElementById("result").innerHTML = "Answer: " + answer;
+      }
+    }
+
+    function clearAll() {
+      document.getElementById("num1").value = "";
+      document.getElementById("num2").value = "";
+      document.getElementById("result").innerHTML = "Answer: ";
+    }
+  </script>
+
+</body>
+</html>
